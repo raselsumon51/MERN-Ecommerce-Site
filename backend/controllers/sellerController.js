@@ -2,6 +2,15 @@ const bcrypt = require('bcrypt');
 const Seller = require('../models/sellerSchema.js');
 const { createNewToken } = require('../utils/token.js');
 
+
+const welcomme = async (req, res) => {
+    try {
+        res.send("Working !")
+     } catch (err) {
+        res.status(500).json(err);
+    }
+};
+
 const sellerRegister = async (req, res) => {
     try {
         const salt = await bcrypt.genSalt(10);
@@ -66,4 +75,4 @@ const sellerLogIn = async (req, res) => {
     }
 };
 
-module.exports = { sellerRegister, sellerLogIn };
+module.exports = { sellerRegister, sellerLogIn, welcomme };

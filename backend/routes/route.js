@@ -3,7 +3,8 @@ const authMiddleware = require('../middleware/authMiddleware.js');
 
 const {
     sellerRegister,
-    sellerLogIn
+    sellerLogIn,
+    welcome
 } = require('../controllers/sellerController.js');
 
 const {
@@ -37,6 +38,7 @@ const {
     getOrderedProductsBySeller
 } = require('../controllers/orderController.js');
 
+router.get('/test', getProducts);
 
 // Seller
 router.post('/SellerRegister', sellerRegister);
